@@ -49,4 +49,30 @@ public abstract class Conta implements IConta {
 		System.out.println(String.format("Numero: %d", this.numero));
 		System.out.println(String.format("Saldo: %.2f", this.saldo));
 	}
+
+	//-----------IMPLEMENTAÇÕES DE FUNÇOES DE CARTÃO DE CRÉDITO---------------//
+	private double limiteCredito = 100.0;
+    private double saldoCartaoCredito = 0.0;
+
+    public double getLimiteCredito() {
+        return limiteCredito;
+    }
+    public double getSaldoCartaoCredito() {
+        return saldoCartaoCredito;
+    }
+
+    // Método para pagar com o cartão de crédito
+    public void pagarComCartaoCredito(double valor) {
+        if (valor <= saldoCartaoCredito) {
+            saldoCartaoCredito -= valor;
+            System.out.println("Pagamento de R$" + valor + " realizado com sucesso utilizando o cartão de crédito.");
+        } else {
+            System.out.println("Saldo insuficiente no cartão de crédito.");
+        }
+    }
+
+	// Método para verificar saldo disponível no cartão de crédito
+	public void verificarSaldoCartaoCredito() {
+        System.out.println("Saldo disponível no cartão de crédito: R$" + saldoCartaoCredito);
+    }
 }
