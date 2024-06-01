@@ -11,7 +11,13 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public void listarClientes(){
+	
+
+	public Cliente(String nome) {
+        this.nome = nome;
+    }
+
+    public void listarClientes(){
 		System.out.println(nome);
 	}
 
